@@ -1,0 +1,185 @@
+1. Create Hello world using HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+      <h1>Hello World!</h1>
+    </div>
+</body>
+</html>
+
+2. Create Hello World using JS
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste React</title>
+  </head>
+  <body>
+    <!-- Hello World using HTML-->
+    <!-- <div id="root">
+      <h1>Hello World!</h1>
+    </div> -->
+    <div id="root"></div>
+    <script>
+      //Hello World using JS
+      const heading = document.createElement("h1");
+      heading.innerHTML = "Hello World from JS!";
+
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script>
+  </body>
+</html>
+
+3. Create Hello World using React
+
+What is CDN? 
+
+What is CrossOrigin?
+
+React is JS library. 
+
+As soon as we inject CDN scripts inside our project, if we write React in chrome console, it is coming from injected CDN link.
+
+Why two CDN files?
+1. First is react dev js. THis is core react algos
+2. Second is react dom. Useful for dom modifications.
+
+Why two files? 
+React works on mobile phones (react native). React 3D etc. 
+
+4. Create Hello World using React
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script>
+      const heading = React.createElement("h1", "", "Hello World from React");
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      root.render(heading);
+    </script>
+  </body>
+</html>
+
+Its good to differentiate JS code from HTML. Moved JS to App.js.
+
+The most costly operation is DOM manipulation. DOM tree will be modified and all libraries and framework do this. 
+
+
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Hello World from React"
+);
+
+console.log(heading)
+
+What will be the output?
+It will be object. Its react element. React element is nothing but normal JS object.
+
+
+Create below code
+// <div id="parent">
+//   <div id="child">
+//     <h1> I am a child</h1>
+//   </div>
+// </div>
+
+const parent = React.createElement(
+  "div",
+  { id: "parent" },
+  React.createElement(
+    "div",
+    { id: "child" },
+    React.createElement("h1", {}, "I am a child")
+  )
+);
+
+ReactElement(object) => HTML(Browser understands)
+
+Create below code
+
+// <div id="parent">
+//   <div id="child">
+//     <h1> I am a child</h1>
+//     <h2> I am a h2 </h2>
+//   </div>
+// </div>
+
+const parent = React.createElement(
+  "div",
+  { id: "parent" },
+  React.createElement(
+    "div",
+    { id: "child" },
+    [React.createElement("h1", {}, "I am a child"), React.createElement("h2", {}, "I am a child")]
+  )
+);
+
+// <div id="parent">
+//   <div id="child">
+//     <h1> I am a child</h1>
+//     <h2> I am a h2 </h2>
+//   </div>
+//  <div id="child">
+//     <h1> I am a child</h1>
+//     <h2> I am a h2 </h2>
+//   </div>
+// </div>
+
+const parent = React.createElement("div", { id: "parent" }, [
+  React.createElement(
+    "div",
+    { id: "child" },
+    React.createElement("h1", {}, "I am a child"),
+    React.createElement("h2", {}, "I am a second child")
+  ),
+  React.createElement("div", { id: "child" }, [
+    React.createElement("h1", {}, "I am a child"),
+    React.createElement("h2", {}, "I am a second child"),
+  ]),
+]);
+
+
+
+To do this structure its literally messed up code. That's why JSX is there.
+
+REACT IS NOT ONLY WRITTEN USING JSX. JSX MAKES LIFE EASY.
+
+
+React can be injected only to the small portion of the code. Its the main advantage.
+
+
+REVISION
+
+1. Hello world using HTML, JS, React (using CDN links)
+2. Extracted script to App.js, created react element (object at end of day)
+3. create root, render method put object to page (element converts to html and browser understands print on the page)
+4. createeelement - tag, attributes, children (normal react element, multiple children using list)
+5. Inside HTML, when root.render executes it replace all exisiting content with root.render content
+6. Anything on top or bottom remains same only changes will be replaced.
