@@ -1,0 +1,148 @@
+What is igniting the app?
+The code right now we have only html, css, js. Is it ready to push for production? no
+
+This code needs to be minified, bundled up. 
+
+npm create react-app has scaffhold production ready app.
+
+1. Can react itself build product ready fast application?
+-> No. We have other dependencies which are helping to make app fast. 
+
+-------------
+NPM 
+-------------
+npm manages packages but full form is not node package manager.
+
+npm basically is a standard repo for all packages. Its one of the biggest package managers.
+create react-app has npm by default. 
+
+We will add NPM to our application.
+
+npm init
+
+We got package.json
+
+----------------
+package.json
+----------------
+Its a configuration file for our NPM.
+
+Why do we need package.json?
+-> packages are basically dependencies on which our app runs. npm takes care of version of package in package.json.
+
+Let's start installing dependencies.
+
+1. Bundler - Minifies or caches our html, css, js code.
+Eg - webpack, bable, wheat.
+
+create-react-app behind scenes use webpack, bable bundler.
+
+We will use parcel.
+
+npm install -d parcel
+
+2 types of dependencies
+1. Normal dependencies  2. Developer dependencies
+Developer dependencies - during development phase
+Normal dependencies - used in production as well
+
+[Read about it]
+
+after installing parcel we can see devDependencies of parcel in package.json.
+
+^ and ~ 
+example - ^1.2.3 where major.minor.patch.sub patch version
+~ will update you to all future patch versions, without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to <1.3.0
+^ will update you to all future minor/patch version, without incrementing major version ^1.2.3 will use releases from 1.2.3 to <2.0.0
+^ give bakcward compatability, bug fixes, old func deprecated but operational
+
+-----------------
+package-lock.json
+-----------------
+Diff between package.json and package-lock.json?
+package -> config for npm, tracks what version is installed.
+package-lock.json keeps track of exact version which is used in the applicaiton
+It has locked versions, exact tree that was generated to allow subsequent installs to have identical versions.
+Autom generated when npm modifies either node_modules tree of package.json file
+Future devs can install same dependencies.
+
+-------------------
+Node node_modules
+--------------------
+contains all code fetched from npm
+after npm init-m it fetches all code from production
+we installed only parcel but parcel has its own dependencies and so on "transitive dependencies"
+
+How many package.json we have?
+Every dependencies will have its own dependencies.
+
+Recap
+-----
+1. Init github repo
+2. setup repo
+3. install npm
+4. Prjct can start using npm init
+5. Pckg.json 
+6. Pckg-lock.json
+7. node node_modules
+
+To ignite app use command npx parcel index.html
+
+npx parcel index.html
+-> npx is executor of node packages. npx check whether package is locally installed and executes it.
+npx is a npm package runner (x probably stands for eXecute). One common way to use npx is to download and run a package temporarily or for trials.
+
+create-react-app is an npm package that is expected to be run only once in a project's lifecycle. Hence, it is preferred to use npx to install and run it in a single step.
+
+https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm
+https://create-react-app.dev/docs/getting-started/
+
+cdn way is not good way because its costly operation. If we have react in node module its easy to use react instead of calling a network module.
+
+npm i react
+npm i react-dom
+
+We removed cdn but app won't work because we aren't specifying from where react is coming from
+So we will use import statement
+
+Browser scripts can't have imports or exports
+because our app.js is considered as normal js.
+change <script type="module" src="./App.js"/>
+
+parcel
+-------
+1. Dev build
+2. Local server
+3. HMR [Hot Module Replacement]
+4. Uses file watching algo 
+5. Faster builds - caching
+6. Image optimization
+7. Minification
+8. Bundling files
+9. Compress
+10. Consistent hashing
+11. Code splitting
+12. Differential Bundling
+13. Error Handling- 
+14. Different dev and prod build
+https://parceljs.org
+
+npx parcel build index.html
+
+
+Browserlist - package to help have app in versions of Browser
+
+
+
+
+REVISION
+1. NPM
+2. npm init
+3. package.json
+4. parcel installation
+5. dependencies ^ & ~
+
+
+Q
+Diff between package.json and package-lock.json?
+dependencies ^ & ~
