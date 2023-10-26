@@ -1,0 +1,99 @@
+npx parcel index.html
+
+Create scripts to build project.
+"scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  }
+
+If you aren't aware of building a project we can find this command in package.json
+
+npm run start
+npm run build -> to build project
+Even npm start works
+
+React Elements
+--------------
+Kind of equivalent to DOM Elements
+Eg - const heading = React.createElement("h1",{id:"heading"}, "Namaste React");
+React Elements are not HTML Elements.
+React.createElement creates react object.
+When we render this element to the DOM it becomes html
+React.createElement => object => HTMLEle(render)
+
+createElement is clumsy to create React element. So, Fb came with JSX.
+
+We can write react without JSX.
+
+JSX is separate react is separate.
+
+
+================================================================================
+Without JSX
+const heading = React.createElement("h1", {id:"heading"}, "Namaste");
+
+With JSX
+const jsxHeading = <h1>Namaste</h1>;
+================================================================================
+
+JSX is html like syntax. Looks like html/xml
+JSX is not HTML.
+
+JSX is just a syntax.
+
+Eg - 
+const heading = React.createElement("h1", { id: "heading" }, "Namaste React");
+
+console.log(heading);
+
+const jsxHeading = <h1 id="heading">Namaste React using jsx</h1>;
+
+console.log(jsxHeading);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(heading);
+
+Basically both are objects.
+
+JSX eases our life with familiar syntax
+
+Is JSX valid JS?
+It is not valid JS as per say.
+Yes/No 
+JS engine doesn't understand JSX, its not pure JS. JS understand ECMA Script. 
+If you write JSX in chrome console, it gives you error.
+
+parcel is doing the job. Basically jsx code is transpiled and JS engine understands the code.
+
+Parcel uses Babel to transpile
+
+React.createElement => ReactElement- JS object => HTMLElement(render)
+JSX => React.createElement  => ReactElement- JS object => HTMLElement(render)
+
+Babel tranpiles ES6 code to support in older version of browsers.
+
+Goto Babel you can see how next gen JS get converted to browser compatible Javascript 
+
+In JSX unlike class in html we need to use className.
+
+Use camel case to attributes in JSX.
+
+EXTENSIONS - Prettier, Bracket pair colorizer, Better comments, ES lint
+
+
+================================================================================
+REACT COMPONENT
+================================================================================
+
+REACT COMPONENT - class based, functional components
+
+functional component is just normal JS function which returns JSX.
+
+Eg - const HeadingComponent = () => {
+  return <h1>Namaste</h1>;
+};
+
+component composition -> component inside component
+
+inside component any JS code can be run inside {} braces.
