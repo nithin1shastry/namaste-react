@@ -1,0 +1,5 @@
+Do not use index as keys while iterating
+Its not a recommended practice.
+unique id is best.
+
+While using map, filter. Its recommended to have unique IDs for every element. Because react identifies which elements are only changed and it updates DOM accordingly.
