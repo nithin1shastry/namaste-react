@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items > ul {
+  display: flex;
+}
+
+.nav-items > ul > li {
+  font-size: 15px;
+  padding: 10px;
+  list-style: none;
+}
+.nav-items > ul > li:hover {
+  color: brown;
+  cursor: pointer;
+}
+
+.login-btn {
+  margin-right: 10px;
+}
+
+.filter-container {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-btn {
+  cursor: pointer;
+}
+
+.shimmer-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.restaurent-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 5px;
+  width: 200px;
+  min-height: 200px;
+  background-color: #f1f1f1;
+  margin: 10px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 300px;
+  background-color: #f1f1f1;
+  margin: 10px;
+}
+
+.card:hover {
+  border: 1px solid #000;
+}
+
+.res-logo {
+  width: 200px;
+  height: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 70px;
+  }
+  .nav-items > ul > li {
+    font-size: 12px;
+  }
+  .input {
+    width: 100%;
+  }
+  .filter-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-container {
+    display: flex;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+}

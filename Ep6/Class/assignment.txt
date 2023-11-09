@@ -1,0 +1,78 @@
+Assignment 06 - Exploring the world
+
+Theory:
+
+1. What is Microservice?
+In microservice architecture, the small application combines together forms an big app and
+the softwares are composed of small independent services like database and UI,which is used to communicate
+over API's. Each of the services has its own job which is known as separator of concern and follows
+single responsible principle and they talk to eachother based on usecases.
+They interact with eachother using Backend with UI and viceversa.
+
+2. What is Monolith architecture?
+The Monolith architecture are used to run on single applications. All the services can run on the specific
+port and they are mapped to same domain name. The services interact by calling to different url or port.A monolithic architecture is a singular, large computing network with one code base that couples all of the business concerns together.
+
+3. What is difference between monolith and microservice?
+Microservice architecture: A microservices architecture, also simply known as microservices, is an architectural method that relies on a series of independently deployable services. These services have their own business logic and database with a specific goal. Updating, testing, deployment, and scaling occur within each service
+
+Monolith architecture: They have an easy deployment and easy debugging. and they run on the single applications. A monolithic architecture is a singular, large computing network with one code base that couples all of the business concerns together.  To make a change to this sort of application requires updating the entire stack by accessing the code base and building and deploying an updated version of the service-side interface. This makes updates restrictive and time-consuming.
+
+4. Why do we need useEffect Hook?
+The useEffect hook consists of an callback function and an argument array. The callback function will be called after the component is rendered and useEffect is an javascript function. The api calls, setTimeout, setIntervals can be called using useEffect.
+
+useEffect(() => {
+
+}, [])
+
+5. What is optional chaining?
+The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
+
+6. What is shimmer UI?
+The shimmer UI is used to show the loading state in web or mobile app. It is used to improve the user experince.
+
+7. what is difference between js expression and js statement?
+The js expression is used to resolve or return a value and is used to assign and evalute an value 
+Thej js statement does not return an value.
+
+8. What is conditional rendering?
+It is used to render the component conditionally.
+=> using if statement 
+if(boolean){
+    return <ComponentOne />
+}else{
+    return <ComponentTwo />
+}
+
+=>using ternary condition 
+=> let boolean = true
+=> boolean ? <Login /> : <Logout />
+
+=> using && operator 
+=> login && <button>logout</button>
+
+9. what is cors?
+The cors is termed as cross-origin resource, which is used to communicate from one domain to another domain and is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. Here, the browser and server interacts to determine whether it is safe to allow the cross-origin request. we can allown cross origin in an webpage using the cors chrome extension.
+
+10. what is async and await?
+An async function declaration creates an AsyncFunction object. Each time when an async function is called, it returns a new Promise which will be resolved with the value returned by the async function, or rejected with an exception uncaught within the async function.
+An await is used to wait for an promise and is used inside an async block.
+
+const apiData = async () => {
+    const response = await fetch()
+}
+
+11. what is the use of const json = await data.json() in getRestaurants()?
+It is used to get or extract the json object from the data fetched using api and it returns an promise
+
+
+Coding
+1. Play with useEffect hook to see when it is called. (before or after render)
+2. Play with dependency array in useEffect
+3. Play with developer console by putting an debugger in render and useEffect
+4. Call an actual api to get data 
+5. Handle error in api call 
+6. Build shimmer ui when data is not loaded.
+7. Render ui with actual api data 
+8. Make search functionality work.
+9. make login logut button that toggles with state
